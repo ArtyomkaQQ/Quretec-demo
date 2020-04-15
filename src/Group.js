@@ -2,17 +2,29 @@ import React, { Component } from 'react';
 import { Button, Tooltip } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
 import { Input } from 'antd';
+import counterpart from 'counterpart';
+import Translate from 'react-translate-component';
+import ee from './lang/ee';
+import en from './lang/en';
 
 const { Search } = Input;
+counterpart.registerTranslations('ee', ee);
+counterpart.registerTranslations('en', en);
+counterpart.setLocale('ee');
 
 class Group extends Component {
-    state = {
+    state = { 
         show: false
-    }
+     }
 
-    toggle = () => this.setState((currentState) => ({ show: !currentState.show }));
+    toggle = () => this.setState((currentState) => ({show: !currentState.show}));
 
-    render() {
+    onLangChange = (e) => {
+        this.setState({lang: e.target.value});
+        counterpart.setLocale(e.target.value);
+      }
+
+    render() { 
         return (
             <div>
                 <Tooltip title="search">
@@ -28,11 +40,11 @@ class Group extends Component {
                 </div>
 
                 <h2 style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                    Welcome to Grupid !
+                <Translate content="title" />
             </h2>
             </div>
         );
     }
 }
-
+ 
 export default Group;
