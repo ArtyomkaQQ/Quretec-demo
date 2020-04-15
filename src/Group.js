@@ -7,7 +7,7 @@ class Group extends Component {
         return (
             <div>
               <AppNav />
-              <h2 style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+              <h2 style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 Welcome to Grupid !
                      </h2>
             </div>

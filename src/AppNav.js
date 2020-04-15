@@ -1,19 +1,19 @@
-import React, { Component } from 'react';
-import './App.scss';
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import React, { Component } from "react";
+import "./App.scss";
+import { Link } from "react-router-dom";
 
-import { Layout, Menu } from 'antd';
+import { Layout, Menu } from "antd";
 import {
   MenuUnfoldOutlined,
   MenuFoldOutlined,
   UserOutlined,
   VideoCameraOutlined,
   UploadOutlined,
-} from '@ant-design/icons';
+} from "@ant-design/icons";
 
 const { Header, Sider, Content } = Layout;
 
-class App extends Component {
+class AppNav extends Component {
   state = {
     collapsed: false,
   };
@@ -26,11 +26,10 @@ class App extends Component {
 
   render() {
     return (
-      <Router>
-        <Layout>
+      <Layout>
         <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
           <div className="logo" />
-          <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
+          <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
             <Menu.Item key="1">
               <UserOutlined />
               <Link to="/grupid">Grupid</Link>
@@ -47,25 +46,28 @@ class App extends Component {
         </Sider>
         <Layout className="site-layout">
           <Header className="site-layout-background" style={{ padding: 0 }}>
-            {React.createElement(this.state.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
-              className: 'trigger',
-              onClick: this.toggle,
-            })}
+            {React.createElement(
+              this.state.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,
+              {
+                className: "trigger",
+                onClick: this.toggle,
+              }
+            )}
           </Header>
           <Content
             className="site-layout-background"
             style={{
-              margin: '24px 16px',
+              margin: "24px 16px",
               padding: 24,
               minHeight: 280,
-            }}>
+            }}
+          >
             Content
           </Content>
         </Layout>
       </Layout>
-      </Router>
     );
   }
 }
 
-export default App;
+export default AppNav;
