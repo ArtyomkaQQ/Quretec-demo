@@ -55,7 +55,7 @@ class AppNav extends Component {
             >
               <Menu.Item key="2">
                 <PieChartOutlined />
-                <span>Kodu</span>
+                <span><Translate content="home" /></span>
               </Menu.Item>
               <SubMenu
                 key="sub1"
@@ -67,14 +67,18 @@ class AppNav extends Component {
                 }
               >
                 <Menu.Item key="5">
-                  <Link>
+                  <Link to="/grupid">
                     <Translate content="forms.f2" />
                   </Link></Menu.Item>
                 <Menu.Item key="6">
                   <Link to="/haldamisel">
                   <Translate content="forms.f3" />
                   </Link></Menu.Item>
-                <Menu.Item key="7">Avaldamisel</Menu.Item>
+                <Menu.Item key="7">
+                <Link to="/">
+                    Avaldamisel
+                  </Link>
+                </Menu.Item>
                 <Menu.Item key="8">Option 8</Menu.Item>
               </SubMenu>
               <Menu.Item key="3">

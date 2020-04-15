@@ -1,4 +1,6 @@
 export default {
+    home: 'Home',
+
     forms: {
         f1: 'Groups',
         f2: 'Groups',
