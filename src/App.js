@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./App.scss";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-import { Layout, Menu } from "antd";
+import { Layout, Menu, Radio } from "antd";
 import {
   MenuUnfoldOutlined,
   MenuFoldOutlined,
@@ -134,10 +134,10 @@ class AppNav extends Component {
                 minHeight: 280,
               }}
             >
-              <select value={this.state.lang} onChange={this.onLangChange}>
-                <option value="ee">EE</option>
-                <option value="en">EN</option>
-              </select>
+              <Radio.Group defaultValue="ee" buttonStyle="solid" value={this.state.lang} onChange={this.onLangChange}>
+                <Radio.Button value="ee">EE</Radio.Button>
+                <Radio.Button value="en">EN</Radio.Button>
+              </Radio.Group>
 
               <Route exact={true} path="/grupid" component={Group} />
               <Route exact={true} path="/haldamisel" component={Manageable} />
