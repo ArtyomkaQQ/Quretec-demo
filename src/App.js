@@ -26,7 +26,7 @@ counterpart.setLocale("ee");
 
 class AppNav extends Component {
   state = {
-    collapsed: false,
+    collapsed: true,
   };
 
   toggle = () => {
